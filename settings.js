@@ -472,6 +472,7 @@ var settings = module.exports = {
      *    global.get("os")
      */
     functionGlobalContext: {
+        firebaseAdmin:require("firebase-admin")
         // os:require('os'),
     },
 

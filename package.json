@@ -10,8 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
+    "firebase-admin": "^11.6.0",
     "node-red": "^3.0.2",
-    "node-red-contrib-uibuilder": "~6.1.1",
     "when": "^3.7.8"
   }
 }
