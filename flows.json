@@ -36,22 +36,6 @@
         ]
     },
     {
-        "id": "c2d9605d.abf53",
-        "type": "debug",
-        "z": "fd8e8b6fa29d6f79",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 670,
-        "y": 60,
-        "wires": []
-    },
-    {
         "id": "2a4e826b.c9ae4e",
         "type": "inject",
         "z": "fd8e8b6fa29d6f79",
@@ -101,8 +85,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 200,
+        "x": 120,
+        "y": 380,
         "wires": [
             [
                 "479444429fceb3aa"
@@ -120,8 +104,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 200,
+        "x": 260,
+        "y": 380,
         "wires": [
             [
                 "0feb7ae52911d870"
@@ -140,8 +124,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 460,
-        "y": 200,
+        "x": 420,
+        "y": 380,
         "wires": []
     },
     {
@@ -159,7 +143,7 @@
         "y": 60,
         "wires": [
             [
-                "c2d9605d.abf53"
+                "e3097dcf95be2c49"
             ]
         ],
         "outputLabels": [
@@ -174,42 +158,13 @@
         "server": "3ce080af1180e0bb",
         "client": "",
         "x": 90,
-        "y": 300,
+        "y": 120,
         "wires": [
             [
-                "d33d70f67a4c520a",
-                "04596c578f0a44a6",
-                "d4bab76172439c27"
+                "d4bab76172439c27",
+                "fd05e9f4de9743a7"
             ]
         ]
-    },
-    {
-        "id": "d33d70f67a4c520a",
-        "type": "debug",
-        "z": "fd8e8b6fa29d6f79",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 260,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "04596c578f0a44a6",
-        "type": "websocket out",
-        "z": "fd8e8b6fa29d6f79",
-        "name": "",
-        "server": "3ce080af1180e0bb",
-        "client": "",
-        "x": 210,
-        "y": 360,
-        "wires": []
     },
     {
         "id": "d4bab76172439c27",
@@ -223,29 +178,12 @@
         "finalize": "",
         "libs": [],
         "x": 250,
-        "y": 260,
+        "y": 120,
         "wires": [
             [
                 "0e4391c1834b5817"
             ]
         ]
-    },
-    {
-        "id": "f62eb932679d8283",
-        "type": "debug",
-        "z": "fd8e8b6fa29d6f79",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 620,
-        "y": 260,
-        "wires": []
     },
     {
         "id": "0e4391c1834b5817",
@@ -258,13 +196,79 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
-        "y": 260,
+        "x": 420,
+        "y": 120,
         "wires": [
             []
         ],
         "outputLabels": [
             "1"
         ]
+    },
+    {
+        "id": "e3097dcf95be2c49",
+        "type": "function",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "Send WS Message",
+        "func": "msg.payload.recipients.map(recipient => {\n    const ws_msg = {\n        command: 'anncmnt',\n        audioUrl: msg.payload.announcement.audioUrl,\n        id: msg.payload.announcement.id\n    }\n    node.send({\n        payload: ws_msg,\n        _session: {\n            id: recipient.websocketId\n        }\n    });\n})\n// node.warn(msg.payload.recipients);\n// return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 60,
+        "wires": [
+            [
+                "56c6dea0cf95419a"
+            ]
+        ]
+    },
+    {
+        "id": "56c6dea0cf95419a",
+        "type": "websocket out",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "",
+        "server": "3ce080af1180e0bb",
+        "client": "",
+        "x": 850,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "fd05e9f4de9743a7",
+        "type": "function",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "ACK",
+        "func": "let received_msg = JSON.parse(msg.payload)\nif (received_msg.command == 'ack') {\n    msg.payload = {\n        classroom_code: received_msg.classroom_code,\n        // websocket_id: msg._session.id\n        msg_id: received_msg.msg_id\n    }\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 160,
+        "wires": [
+            [
+                "07fa6b08b17df0b7"
+            ]
+        ]
+    },
+    {
+        "id": "07fa6b08b17df0b7",
+        "type": "debug",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 160,
+        "wires": []
     }
 ]
