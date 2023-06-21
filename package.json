@@ -12,6 +12,7 @@
     "dotenv": "^16.0.3",
     "firebase-admin": "^11.6.0",
     "node-red": "^3.0.2",
+    "simple-tts-mp3": "^1.0.7",
     "when": "^3.7.8"
   }
 }

@@ -472,7 +472,8 @@ var settings = module.exports = {
      *    global.get("os")
      */
     functionGlobalContext: {
-        firebaseAdmin:require("firebase-admin")
+        firebaseAdmin:require("firebase-admin"),
+        simpleTtsMp3:require('simple-tts-mp3')
         // os:require('os'),
     },
 

@@ -60,7 +60,8 @@
         "y": 60,
         "wires": [
             [
-                "7540fc1a.916874"
+                "7540fc1a.916874",
+                "65991308f1ab1957"
             ]
         ]
     },
@@ -158,7 +159,7 @@
         "server": "3ce080af1180e0bb",
         "client": "",
         "x": 90,
-        "y": 120,
+        "y": 220,
         "wires": [
             [
                 "d4bab76172439c27",
@@ -178,7 +179,7 @@
         "finalize": "",
         "libs": [],
         "x": 250,
-        "y": 120,
+        "y": 220,
         "wires": [
             [
                 "0e4391c1834b5817"
@@ -197,7 +198,7 @@
         "finalize": "",
         "libs": [],
         "x": 420,
-        "y": 120,
+        "y": 220,
         "wires": [
             []
         ],
@@ -247,7 +248,7 @@
         "finalize": "",
         "libs": [],
         "x": 230,
-        "y": 160,
+        "y": 260,
         "wires": [
             [
                 "07fa6b08b17df0b7",
@@ -269,7 +270,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 380,
-        "y": 160,
+        "y": 260,
         "wires": []
     },
     {
@@ -301,12 +302,164 @@
         "finalize": "",
         "libs": [],
         "x": 400,
-        "y": 200,
+        "y": 300,
         "wires": [
             []
         ],
         "outputLabels": [
             "1"
+        ]
+    },
+    {
+        "id": "65991308f1ab1957",
+        "type": "function",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "Fetch Exam Schedules",
+        "func": "var firebaseAdmin = global.get('firebaseAdmin');\nconst configData = 'eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNhbXB1c2Nhc3QtZWxhYmlucyIsInByaXZhdGVfa2V5X2lkIjoiMWZkYzY4NTFjOGRhYWFhM2UyYjlmMzZmZDRkOTNiYWZlYzI2ZjY4YiIsInByaXZhdGVfa2V5IjoiLS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tXG5NSUlFdmdJQkFEQU5CZ2txaGtpRzl3MEJBUUVGQUFTQ0JLZ3dnZ1NrQWdFQUFvSUJBUUM5Q3g1ZTZFTktjZVB3XG5LcGcwT2Y0MVIwYXVaQ2I1aDdHU0lBdEliaEJoZmdEUlNrL2R5WERlYmw2cmRyNXQ1dmpEY2dvZW04cVA5T0YyXG5nRHBkUVZ6dUtiKzNiY093Z2N4b3F6KzQ3dXVRZGlQSXY3cFBoWU1ZNW9mUEF0YjJHV1pFV29GOWIyUDgwbUo4XG5NUzA5NWxHNjJieDNzWUtYeFBseDk5eXo2dTVwNVZIS3A1YWZhZXZMUjU0VTdnaXY0bU03UVVwWTVydG9ZZm5FXG5jV05wRTNDaU8rdmlidW9KRktYaFNDQjlRZzUxanlwRmVBTHFBeWZDS0pXcktBT2ZXZW9XOExKNlNXRCtpcTNWXG5yKzc5WHRYeU16ODNETkdqSXV3NVdWOWIzWFUvVWdxVlBkVkFyblZ4aVR6MWs5cmxPOHlwYTErMHl1U1lEM2tSXG54cXB1akRCcEFnTUJBQUVDZ2dFQUtxc3ZDblJwdGN5aGltU08wS0R6VmdLMXV5aDdYSkNLWGFWU2JxRjdISW8wXG5kSWpOb0kxMlpwb3FUNURBZUMxdElpNGtCeGNhWUNaQlduNGtUa2F4eTBiTWtVSWE3SVRMaHFkNmZVc2VDOUFDXG5rUzNuUjBvbkZqQjRZRnJ2ZW9JdW9VaDlXRHJUYW0zeEVUK0hTdVNvdDJBc2FDYStoM09MNnZPclVzZTQwdGt1XG5aVk1DMktNdXNhdU0yRERHUnlFQWN3WWl0M0EwVDFvYlVEZ1oydnEzK1c5UXZHY0NLRHBGSDlqQk1tOVFkUUo1XG5qMWlMd0QrdlhldHcxaDVtNkdkeW1BMXR6ajRLUmI5QU9oZEY2cDdKcHg5QVgrN2RzKzV1TllTRzlqWUFvalNUXG5xTjRKOFRmSnZFbHpOVEUweVhQaFhQV3hiVGgxWjlIbFc1bTZ4R0NabFFLQmdRRHRhNHZ0ZVpwaEFJNEx6akRXXG5ITkF5SXV3YjdGMFNyQVZMUnNqYjNtZ0xBdStNSHVHem9Da3FuQjB6ODRMdnlmOU1WWUF6cnJ1YStyQWhnSy9vXG5XMmk5cjRxOEtOQ0xSWndCaUNENko3NlU3dCtsc3pvTXVtM3c3dVpsanA4RmlKek5LR1JmemhPWE10WmVzVmpuXG5iUVN3NlhJaksvajdGSkszNmpRc0lLQ3l4UUtCZ1FETDFtWG9DVlFKeWR3VFlLcVBKTUJMOW5WWmhqRUMrNi84XG51MG1wMGVKSDBvZGZjYnRIOGh6cVZnZk41ZkVSWFZlOXdDcC9ocjYzRmt1dzFpM0NCMHg4ZFhOZVVFTmpZeVR3XG5Cb1pEbm9QQ05mckhkdVpqVGYxNG45YkUyVXRIeDY2T3hUZHo4anhCVFFlTVgrd0VZU1cyNE5NTU1NMURZcEwxXG50c3hVUmliUlZRS0JnUUNIUWJXOTNJRXVzZm82ajRVUzllZEdLTThLT1dYc3RVTnUxeXltMWRYQU1EUDRSNytkXG5iYWtHTlZvTnRyVHBsdEp5MG1MdkRxU2liaDdaZDA2L3VSTzZ2TDcwNHV1cjdFUXNPemxPU2tZdzRzVld5UHhSXG5OQVJlTmp2YnI1eTRzbE5pTFpqQlc4MmRYY0R5d1dZOHNjYnlZb3c3clZseThRMkU2VkEvczNiWllRS0JnUURMXG55MEE1bkZIME0yaWZ5dzdiYktBQmtwaEMrR0k2SEU4WWZGdXF1SmZtdlByeGx2RHFmb3NnVXdFY2YxL2t2NUZBXG51a2NERjBISUpUZHB4c2thNjFjeU8rOHJoVTNLcVU0OTJCZ1d0UDRBaHgyQ25VSzhXRFlxaW93Y1pTL1p4UytsXG51RkczejZFa25KSUdhOFM1b0RNbncySGVGMUN4cFhWT3l3TkE0cDVldlFLQmdIdzZwUWJXazM4S2RqUmNPNEo3XG5QYmxMMUxvcVZIOVhhRVQ3NWs1N3F4K0F5ZWYyQWlYSDh5emxxeTVCbFc2d2NpZTNSc0M1emtYc2JoZlFBWFdtXG5LbjhFQzZUcm9FenZkb0NWU2tKRk1qb3B5V2tPR0RDTTZEYnVYbWxmY1V3ZlVtSXdyVUJpTzBZNnRZam0xZGNJXG5mMkZpSWtHRi9PTVdzSHh5aFNXSmIrWmFcbi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS1cbiIsImNsaWVudF9lbWFpbCI6ImZpcmViYXNlLWFkbWluc2RrLXB3eGR2QGNhbXB1c2Nhc3QtZWxhYmlucy5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsImNsaWVudF9pZCI6IjEwMjYzMTI5MTMwMTUzMjU1NzAwMyIsImF1dGhfdXJpIjoiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL28vb2F1dGgyL2F1dGgiLCJ0b2tlbl91cmkiOiJodHRwczovL29hdXRoMi5nb29nbGVhcGlzLmNvbS90b2tlbiIsImF1dGhfcHJvdmlkZXJfeDUwOV9jZXJ0X3VybCI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92MS9jZXJ0cyIsImNsaWVudF94NTA5X2NlcnRfdXJsIjoiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vcm9ib3QvdjEvbWV0YWRhdGEveDUwOS9maXJlYmFzZS1hZG1pbnNkay1wd3hkdiU0MGNhbXB1c2Nhc3QtZWxhYmlucy5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSJ9'\n\nif (firebaseAdmin.apps.length === 0) {\n    firebaseAdmin.initializeApp({\n        credential: firebaseAdmin.credential.cert(\n            JSON.parse(Buffer.from(configData, 'base64').toString('ascii'))),\n    });\n}\n\nconst firestore = firebaseAdmin.firestore()\n\nfirestore.collection('exam_schedules')\n    .where('endAt', '>', firebaseAdmin.firestore.Timestamp.now())\n    .onSnapshot(snapshot => {\n        let examSchedules = [];\n\n        snapshot.forEach(doc => {\n            examSchedules.push({\n                id: doc.id,\n                ...doc.data()\n            });\n        });\n\n        // Process the exam schedules here\n        global.set('examSchedules', examSchedules)\n        console.log(examSchedules);\n    });",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "1"
+        ]
+    },
+    {
+        "id": "fd6c9ccf423ca91c",
+        "type": "inject",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "f611ad551f47b1fe",
+                "201a4bafef2cc454"
+            ]
+        ]
+    },
+    {
+        "id": "f611ad551f47b1fe",
+        "type": "function",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "Check Exam Schedules",
+        "func": "const examSchedules = global.get('examSchedules') || []\n\n// Function to check if an exam schedule is expired or not\nfunction isScheduleExpired(schedule) {\n    const currentDateTime = new Date();\n    const endDateTime = new Date(schedule.endAt._seconds * 1000); // Convert from seconds to milliseconds\n\n    // Remove the seconds from the currentDateTime and endDateTime\n    const currentDateTimeWithoutSeconds = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), currentDateTime.getHours(), currentDateTime.getMinutes());\n    const endDateTimeWithoutSeconds = new Date(endDateTime.getFullYear(), endDateTime.getMonth(), endDateTime.getDate(), endDateTime.getHours(), endDateTime.getMinutes());\n\n    // Check if the currentDateTime is greater than the endDateTime without seconds\n    return currentDateTimeWithoutSeconds > endDateTimeWithoutSeconds;\n}\n\nfunction isWithinLastMinute(schedule) {\n    const startDateTime = new Date(schedule.startAt._seconds * 1000); // Convert from seconds to milliseconds\n    const currentDateTime = new Date();\n    const oneMinuteAgo = new Date(currentDateTime.getTime() - 60000); // Subtract 60,000 milliseconds (1 minute) from the current date and time\n\n    return startDateTime > oneMinuteAgo && startDateTime <= currentDateTime;\n}\n\nfunction isEnding(schedule) {\n    const endDateTime = new Date(schedule.endAt._seconds * 1000); // Convert from seconds to milliseconds\n    const currentDateTime = new Date();\n\n    // Check if the year, month, date, hour, and minute are equal\n    if (\n        endDateTime.getFullYear() === currentDateTime.getFullYear() &&\n        endDateTime.getMonth() === currentDateTime.getMonth() &&\n        endDateTime.getDate() === currentDateTime.getDate() &&\n        endDateTime.getHours() === currentDateTime.getHours() &&\n        endDateTime.getMinutes() === currentDateTime.getMinutes()\n    ) {\n        return true;\n    } else {\n        return false;\n    }\n}\n\nfunction isEndSoon(schedule) {\n    const endDateTime = new Date(schedule.endAt._seconds * 1000); // Convert from seconds to milliseconds\n    const currentDateTime = new Date();\n\n    // Calculate the end time minus 10 minutes\n    const endMinus10Minutes = new Date(endDateTime.getTime() - 10 * 60 * 1000);\n\n    // Remove the seconds from the endMinus10Minutes and currentDateTime\n    const endMinus10MinutesWithoutSeconds = new Date(endMinus10Minutes.getFullYear(), endMinus10Minutes.getMonth(), endMinus10Minutes.getDate(), endMinus10Minutes.getHours(), endMinus10Minutes.getMinutes());\n    const currentDateTimeWithoutSeconds = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), currentDateTime.getHours(), currentDateTime.getMinutes());\n\n    // Check if the date and time without seconds are equal\n    return endMinus10MinutesWithoutSeconds.getTime() === currentDateTimeWithoutSeconds.getTime();\n}\n\nfunction getIntervalMinutes(schedule) {\n    const currentDateTime = new Date();\n    currentDateTime.setSeconds(0); // Set seconds to 0\n\n    const startDateTime = new Date(schedule.startAt._seconds * 1000); // Convert from seconds to milliseconds\n    startDateTime.setSeconds(0); // Set seconds to 0\n\n    const minutesDifference = Math.floor((currentDateTime.getTime() - startDateTime.getTime()) / (1000 * 60));\n    const intervalMinutes = 30; // Interval duration in minutes\n\n    if (minutesDifference >= 0 && minutesDifference % intervalMinutes === 0) {\n        return minutesDifference;\n    }\n\n    return -1; // Return -1 if not within an interval\n}\n\nexamSchedules.forEach(schedule => {\n    if (!isScheduleExpired(schedule)) {\n        console.log(`The exam schedule \"${schedule.title}\" with ID ${schedule.id} is still active.`);\n        if (isWithinLastMinute(schedule)) {\n            console.log(`within one minutes`);\n        } else {\n            if (isEndSoon(schedule)) {\n                console.log(`ending soon`);\n            } else {\n                if (getIntervalMinutes(schedule) != -1) {\n                    console.log(`Interval:`, getIntervalMinutes(schedule));\n                } else {\n                if (isEnding(schedule)) {\n                    console.log(`ending`);\n                } else {\n                    console.log(`not ending`);\n                }\n                }\n            }\n        }\n\n    }\n});\n\n\n\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a72ccdedca532396",
+        "type": "function",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "text-to-speech",
+        "func": "const { getAudioBuffer } = global.get('simpleTtsMp3');\n\nif (msg.payload.id) {\n    const textList = global.get('textList') || []\n    const textItem = textList.find(item => item.id == msg.payload.id)\n    console.log(textList, textItem)\n    const playText = textItem ? textItem.text:\"Item not found\"\n    getAudioBuffer(playText, 'en')\n        .then(buffer => {\n            // Do something with the buffer\n            msg.payload = buffer\n            node.send(msg);\n        });\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 420,
+        "wires": [
+            [
+                "f55e09aade3c1d1e"
+            ]
+        ]
+    },
+    {
+        "id": "30adf8481bafa3e0",
+        "type": "http in",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "",
+        "url": "/t2mp3",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "a72ccdedca532396",
+                "01d3a5729ae1868b"
+            ]
+        ]
+    },
+    {
+        "id": "f55e09aade3c1d1e",
+        "type": "http response",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "Content-Type": "audio/mpeg",
+            "Content-Disposition": " inline; filename=\"audio.mp3\""
+        },
+        "x": 470,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "01d3a5729ae1868b",
+        "type": "debug",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "201a4bafef2cc454",
+        "type": "function",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "function 2",
+        "func": "const textList = [{\n    id: 1,\n    text: 'first item'\n}, {\n    id: 2,\n    text: '2nd item'\n},\n]\n\nglobal.set('textList', textList)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 340,
+        "wires": [
+            []
         ]
     }
 ]
