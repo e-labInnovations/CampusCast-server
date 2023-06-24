@@ -158,12 +158,13 @@
         "name": "",
         "server": "3ce080af1180e0bb",
         "client": "",
-        "x": 90,
+        "x": 130,
         "y": 220,
         "wires": [
             [
                 "d4bab76172439c27",
-                "fd05e9f4de9743a7"
+                "fd05e9f4de9743a7",
+                "80d474cda2178377"
             ]
         ]
     },
@@ -178,7 +179,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 250,
+        "x": 410,
         "y": 220,
         "wires": [
             [
@@ -191,16 +192,18 @@
         "type": "function",
         "z": "fd8e8b6fa29d6f79",
         "name": "Update Devices",
-        "func": "var firebaseAdmin = global.get('firebaseAdmin');\nconst configData = 'eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNhbXB1c2Nhc3QtZWxhYmlucyIsInByaXZhdGVfa2V5X2lkIjoiMWZkYzY4NTFjOGRhYWFhM2UyYjlmMzZmZDRkOTNiYWZlYzI2ZjY4YiIsInByaXZhdGVfa2V5IjoiLS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tXG5NSUlFdmdJQkFEQU5CZ2txaGtpRzl3MEJBUUVGQUFTQ0JLZ3dnZ1NrQWdFQUFvSUJBUUM5Q3g1ZTZFTktjZVB3XG5LcGcwT2Y0MVIwYXVaQ2I1aDdHU0lBdEliaEJoZmdEUlNrL2R5WERlYmw2cmRyNXQ1dmpEY2dvZW04cVA5T0YyXG5nRHBkUVZ6dUtiKzNiY093Z2N4b3F6KzQ3dXVRZGlQSXY3cFBoWU1ZNW9mUEF0YjJHV1pFV29GOWIyUDgwbUo4XG5NUzA5NWxHNjJieDNzWUtYeFBseDk5eXo2dTVwNVZIS3A1YWZhZXZMUjU0VTdnaXY0bU03UVVwWTVydG9ZZm5FXG5jV05wRTNDaU8rdmlidW9KRktYaFNDQjlRZzUxanlwRmVBTHFBeWZDS0pXcktBT2ZXZW9XOExKNlNXRCtpcTNWXG5yKzc5WHRYeU16ODNETkdqSXV3NVdWOWIzWFUvVWdxVlBkVkFyblZ4aVR6MWs5cmxPOHlwYTErMHl1U1lEM2tSXG54cXB1akRCcEFnTUJBQUVDZ2dFQUtxc3ZDblJwdGN5aGltU08wS0R6VmdLMXV5aDdYSkNLWGFWU2JxRjdISW8wXG5kSWpOb0kxMlpwb3FUNURBZUMxdElpNGtCeGNhWUNaQlduNGtUa2F4eTBiTWtVSWE3SVRMaHFkNmZVc2VDOUFDXG5rUzNuUjBvbkZqQjRZRnJ2ZW9JdW9VaDlXRHJUYW0zeEVUK0hTdVNvdDJBc2FDYStoM09MNnZPclVzZTQwdGt1XG5aVk1DMktNdXNhdU0yRERHUnlFQWN3WWl0M0EwVDFvYlVEZ1oydnEzK1c5UXZHY0NLRHBGSDlqQk1tOVFkUUo1XG5qMWlMd0QrdlhldHcxaDVtNkdkeW1BMXR6ajRLUmI5QU9oZEY2cDdKcHg5QVgrN2RzKzV1TllTRzlqWUFvalNUXG5xTjRKOFRmSnZFbHpOVEUweVhQaFhQV3hiVGgxWjlIbFc1bTZ4R0NabFFLQmdRRHRhNHZ0ZVpwaEFJNEx6akRXXG5ITkF5SXV3YjdGMFNyQVZMUnNqYjNtZ0xBdStNSHVHem9Da3FuQjB6ODRMdnlmOU1WWUF6cnJ1YStyQWhnSy9vXG5XMmk5cjRxOEtOQ0xSWndCaUNENko3NlU3dCtsc3pvTXVtM3c3dVpsanA4RmlKek5LR1JmemhPWE10WmVzVmpuXG5iUVN3NlhJaksvajdGSkszNmpRc0lLQ3l4UUtCZ1FETDFtWG9DVlFKeWR3VFlLcVBKTUJMOW5WWmhqRUMrNi84XG51MG1wMGVKSDBvZGZjYnRIOGh6cVZnZk41ZkVSWFZlOXdDcC9ocjYzRmt1dzFpM0NCMHg4ZFhOZVVFTmpZeVR3XG5Cb1pEbm9QQ05mckhkdVpqVGYxNG45YkUyVXRIeDY2T3hUZHo4anhCVFFlTVgrd0VZU1cyNE5NTU1NMURZcEwxXG50c3hVUmliUlZRS0JnUUNIUWJXOTNJRXVzZm82ajRVUzllZEdLTThLT1dYc3RVTnUxeXltMWRYQU1EUDRSNytkXG5iYWtHTlZvTnRyVHBsdEp5MG1MdkRxU2liaDdaZDA2L3VSTzZ2TDcwNHV1cjdFUXNPemxPU2tZdzRzVld5UHhSXG5OQVJlTmp2YnI1eTRzbE5pTFpqQlc4MmRYY0R5d1dZOHNjYnlZb3c3clZseThRMkU2VkEvczNiWllRS0JnUURMXG55MEE1bkZIME0yaWZ5dzdiYktBQmtwaEMrR0k2SEU4WWZGdXF1SmZtdlByeGx2RHFmb3NnVXdFY2YxL2t2NUZBXG51a2NERjBISUpUZHB4c2thNjFjeU8rOHJoVTNLcVU0OTJCZ1d0UDRBaHgyQ25VSzhXRFlxaW93Y1pTL1p4UytsXG51RkczejZFa25KSUdhOFM1b0RNbncySGVGMUN4cFhWT3l3TkE0cDVldlFLQmdIdzZwUWJXazM4S2RqUmNPNEo3XG5QYmxMMUxvcVZIOVhhRVQ3NWs1N3F4K0F5ZWYyQWlYSDh5emxxeTVCbFc2d2NpZTNSc0M1emtYc2JoZlFBWFdtXG5LbjhFQzZUcm9FenZkb0NWU2tKRk1qb3B5V2tPR0RDTTZEYnVYbWxmY1V3ZlVtSXdyVUJpTzBZNnRZam0xZGNJXG5mMkZpSWtHRi9PTVdzSHh5aFNXSmIrWmFcbi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS1cbiIsImNsaWVudF9lbWFpbCI6ImZpcmViYXNlLWFkbWluc2RrLXB3eGR2QGNhbXB1c2Nhc3QtZWxhYmlucy5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsImNsaWVudF9pZCI6IjEwMjYzMTI5MTMwMTUzMjU1NzAwMyIsImF1dGhfdXJpIjoiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL28vb2F1dGgyL2F1dGgiLCJ0b2tlbl91cmkiOiJodHRwczovL29hdXRoMi5nb29nbGVhcGlzLmNvbS90b2tlbiIsImF1dGhfcHJvdmlkZXJfeDUwOV9jZXJ0X3VybCI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92MS9jZXJ0cyIsImNsaWVudF94NTA5X2NlcnRfdXJsIjoiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vcm9ib3QvdjEvbWV0YWRhdGEveDUwOS9maXJlYmFzZS1hZG1pbnNkay1wd3hkdiU0MGNhbXB1c2Nhc3QtZWxhYmlucy5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSJ9'\n\nif (firebaseAdmin.apps.length === 0) {\n    firebaseAdmin.initializeApp({\n        credential: firebaseAdmin.credential.cert(\n            JSON.parse(Buffer.from(configData, 'base64').toString('ascii'))),\n    });\n}\n\nconst firestore = firebaseAdmin.firestore()\n\nfirestore.collection('devices')\n    .where('classroomCode', '==', msg.payload.classroom_code)\n    .get()\n    .then((querySnapshot) => {\n        node.warn(querySnapshot.length);\n        querySnapshot.forEach((doc) => {\n            // console.log(doc.id, ' => ', doc.data());\n\n            const deviceRef = doc.ref;\n            deviceRef.update({ websocketId: msg.payload.websocket_id })\n                .then(() => {\n                    console.log('websocketId updated successfully');\n                })\n                .catch((error) => {\n                    console.error('Error updating websocketId: ', error);\n                });\n        });\n    })\n    .catch((error) => {\n        console.error('Error getting documents: ', error);\n    });\n\n// const db = firebaseAdmin.firestore();\n// const announcementsRef = db.collection('announcements');\n\n// db.collection(\"announcements\").doc(\"k6UIbKUA0UbNbcJDDQi3\")\n//     .onSnapshot((doc) => {\n//         console.log(\"Current data: \", doc.data());\n//     });\n\n// const firestore = firebaseAdmin.firestore();\n\n// firestore.listCollections().then(collections => {\n//     collections.forEach(collection => {\n//         console.log('Collection:', collection.id);\n//     });\n// }).catch(error => {\n//     console.error('Error listing collections:', error);\n// });\n",
+        "func": "var firebaseAdmin = global.get('firebaseAdmin');\nconst configData = 'eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNhbXB1c2Nhc3QtZWxhYmlucyIsInByaXZhdGVfa2V5X2lkIjoiMWZkYzY4NTFjOGRhYWFhM2UyYjlmMzZmZDRkOTNiYWZlYzI2ZjY4YiIsInByaXZhdGVfa2V5IjoiLS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tXG5NSUlFdmdJQkFEQU5CZ2txaGtpRzl3MEJBUUVGQUFTQ0JLZ3dnZ1NrQWdFQUFvSUJBUUM5Q3g1ZTZFTktjZVB3XG5LcGcwT2Y0MVIwYXVaQ2I1aDdHU0lBdEliaEJoZmdEUlNrL2R5WERlYmw2cmRyNXQ1dmpEY2dvZW04cVA5T0YyXG5nRHBkUVZ6dUtiKzNiY093Z2N4b3F6KzQ3dXVRZGlQSXY3cFBoWU1ZNW9mUEF0YjJHV1pFV29GOWIyUDgwbUo4XG5NUzA5NWxHNjJieDNzWUtYeFBseDk5eXo2dTVwNVZIS3A1YWZhZXZMUjU0VTdnaXY0bU03UVVwWTVydG9ZZm5FXG5jV05wRTNDaU8rdmlidW9KRktYaFNDQjlRZzUxanlwRmVBTHFBeWZDS0pXcktBT2ZXZW9XOExKNlNXRCtpcTNWXG5yKzc5WHRYeU16ODNETkdqSXV3NVdWOWIzWFUvVWdxVlBkVkFyblZ4aVR6MWs5cmxPOHlwYTErMHl1U1lEM2tSXG54cXB1akRCcEFnTUJBQUVDZ2dFQUtxc3ZDblJwdGN5aGltU08wS0R6VmdLMXV5aDdYSkNLWGFWU2JxRjdISW8wXG5kSWpOb0kxMlpwb3FUNURBZUMxdElpNGtCeGNhWUNaQlduNGtUa2F4eTBiTWtVSWE3SVRMaHFkNmZVc2VDOUFDXG5rUzNuUjBvbkZqQjRZRnJ2ZW9JdW9VaDlXRHJUYW0zeEVUK0hTdVNvdDJBc2FDYStoM09MNnZPclVzZTQwdGt1XG5aVk1DMktNdXNhdU0yRERHUnlFQWN3WWl0M0EwVDFvYlVEZ1oydnEzK1c5UXZHY0NLRHBGSDlqQk1tOVFkUUo1XG5qMWlMd0QrdlhldHcxaDVtNkdkeW1BMXR6ajRLUmI5QU9oZEY2cDdKcHg5QVgrN2RzKzV1TllTRzlqWUFvalNUXG5xTjRKOFRmSnZFbHpOVEUweVhQaFhQV3hiVGgxWjlIbFc1bTZ4R0NabFFLQmdRRHRhNHZ0ZVpwaEFJNEx6akRXXG5ITkF5SXV3YjdGMFNyQVZMUnNqYjNtZ0xBdStNSHVHem9Da3FuQjB6ODRMdnlmOU1WWUF6cnJ1YStyQWhnSy9vXG5XMmk5cjRxOEtOQ0xSWndCaUNENko3NlU3dCtsc3pvTXVtM3c3dVpsanA4RmlKek5LR1JmemhPWE10WmVzVmpuXG5iUVN3NlhJaksvajdGSkszNmpRc0lLQ3l4UUtCZ1FETDFtWG9DVlFKeWR3VFlLcVBKTUJMOW5WWmhqRUMrNi84XG51MG1wMGVKSDBvZGZjYnRIOGh6cVZnZk41ZkVSWFZlOXdDcC9ocjYzRmt1dzFpM0NCMHg4ZFhOZVVFTmpZeVR3XG5Cb1pEbm9QQ05mckhkdVpqVGYxNG45YkUyVXRIeDY2T3hUZHo4anhCVFFlTVgrd0VZU1cyNE5NTU1NMURZcEwxXG50c3hVUmliUlZRS0JnUUNIUWJXOTNJRXVzZm82ajRVUzllZEdLTThLT1dYc3RVTnUxeXltMWRYQU1EUDRSNytkXG5iYWtHTlZvTnRyVHBsdEp5MG1MdkRxU2liaDdaZDA2L3VSTzZ2TDcwNHV1cjdFUXNPemxPU2tZdzRzVld5UHhSXG5OQVJlTmp2YnI1eTRzbE5pTFpqQlc4MmRYY0R5d1dZOHNjYnlZb3c3clZseThRMkU2VkEvczNiWllRS0JnUURMXG55MEE1bkZIME0yaWZ5dzdiYktBQmtwaEMrR0k2SEU4WWZGdXF1SmZtdlByeGx2RHFmb3NnVXdFY2YxL2t2NUZBXG51a2NERjBISUpUZHB4c2thNjFjeU8rOHJoVTNLcVU0OTJCZ1d0UDRBaHgyQ25VSzhXRFlxaW93Y1pTL1p4UytsXG51RkczejZFa25KSUdhOFM1b0RNbncySGVGMUN4cFhWT3l3TkE0cDVldlFLQmdIdzZwUWJXazM4S2RqUmNPNEo3XG5QYmxMMUxvcVZIOVhhRVQ3NWs1N3F4K0F5ZWYyQWlYSDh5emxxeTVCbFc2d2NpZTNSc0M1emtYc2JoZlFBWFdtXG5LbjhFQzZUcm9FenZkb0NWU2tKRk1qb3B5V2tPR0RDTTZEYnVYbWxmY1V3ZlVtSXdyVUJpTzBZNnRZam0xZGNJXG5mMkZpSWtHRi9PTVdzSHh5aFNXSmIrWmFcbi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS1cbiIsImNsaWVudF9lbWFpbCI6ImZpcmViYXNlLWFkbWluc2RrLXB3eGR2QGNhbXB1c2Nhc3QtZWxhYmlucy5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsImNsaWVudF9pZCI6IjEwMjYzMTI5MTMwMTUzMjU1NzAwMyIsImF1dGhfdXJpIjoiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL28vb2F1dGgyL2F1dGgiLCJ0b2tlbl91cmkiOiJodHRwczovL29hdXRoMi5nb29nbGVhcGlzLmNvbS90b2tlbiIsImF1dGhfcHJvdmlkZXJfeDUwOV9jZXJ0X3VybCI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92MS9jZXJ0cyIsImNsaWVudF94NTA5X2NlcnRfdXJsIjoiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vcm9ib3QvdjEvbWV0YWRhdGEveDUwOS9maXJlYmFzZS1hZG1pbnNkay1wd3hkdiU0MGNhbXB1c2Nhc3QtZWxhYmlucy5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSJ9'\n\nif (firebaseAdmin.apps.length === 0) {\n    firebaseAdmin.initializeApp({\n        credential: firebaseAdmin.credential.cert(\n            JSON.parse(Buffer.from(configData, 'base64').toString('ascii'))),\n    });\n}\n\nconst firestore = firebaseAdmin.firestore()\nconst websocket_id = msg.payload.websocket_id\n\nfirestore.collection('devices')\n    .where('classroomCode', '==', msg.payload.classroom_code)\n    .get()\n    .then((querySnapshot) => {\n        querySnapshot.forEach((doc) => {\n            // console.log(doc.id, ' => ', doc.data());\n\n            const deviceRef = firestore.collection('devices').doc(doc.id);\n            deviceRef.update({ websocketId: websocket_id })\n                .then(() => {\n                    console.log('websocketId updated successfully');\n                })\n                .catch((error) => {\n                    console.error('Error updating websocketId: ', error);\n                });\n        });\n    })\n    .catch((error) => {\n        console.error('Error getting documents: ', error);\n    });\n\nmsg.payload = {\n    command: 'connected_ack',\n    introURL: 'https://firebasestorage.googleapis.com/v0/b/campuscast-elabins.appspot.com/o/intro.mp3?alt=media&token=756fe61f-8d57-453b-be03-23db5cbedf18',\n    outroURL: 'https://firebasestorage.googleapis.com/v0/b/campuscast-elabins.appspot.com/o/outro.mp3?alt=media&token=75b04d5d-ecdf-4eea-9d87-a7aae01ebc4e'\n}\nnode.send(msg);",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
+        "x": 780,
         "y": 220,
         "wires": [
-            []
+            [
+                "98b404f08dec8afa"
+            ]
         ],
         "outputLabels": [
             "1"
@@ -217,24 +220,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 750,
         "y": 60,
         "wires": [
             [
-                "56c6dea0cf95419a"
+                "98b404f08dec8afa"
             ]
         ]
-    },
-    {
-        "id": "56c6dea0cf95419a",
-        "type": "websocket out",
-        "z": "fd8e8b6fa29d6f79",
-        "name": "",
-        "server": "3ce080af1180e0bb",
-        "client": "",
-        "x": 850,
-        "y": 60,
-        "wires": []
     },
     {
         "id": "fd05e9f4de9743a7",
@@ -247,8 +239,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 230,
-        "y": 260,
+        "x": 270,
+        "y": 280,
         "wires": [
             [
                 "07fa6b08b17df0b7",
@@ -269,8 +261,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 380,
-        "y": 260,
+        "x": 400,
+        "y": 300,
         "wires": []
     },
     {
@@ -286,8 +278,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
-        "y": 160,
+        "x": 280,
+        "y": 340,
         "wires": []
     },
     {
@@ -301,8 +293,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 300,
+        "x": 420,
+        "y": 260,
         "wires": [
             []
         ],
@@ -355,8 +347,7 @@
         "y": 160,
         "wires": [
             [
-                "f611ad551f47b1fe",
-                "201a4bafef2cc454"
+                "f611ad551f47b1fe"
             ]
         ]
     },
@@ -365,7 +356,7 @@
         "type": "function",
         "z": "fd8e8b6fa29d6f79",
         "name": "Check Exam Schedules",
-        "func": "const examSchedules = global.get('examSchedules') || []\n\n// Function to check if an exam schedule is expired or not\nfunction isScheduleExpired(schedule) {\n    const currentDateTime = new Date();\n    const endDateTime = new Date(schedule.endAt._seconds * 1000); // Convert from seconds to milliseconds\n\n    // Remove the seconds from the currentDateTime and endDateTime\n    const currentDateTimeWithoutSeconds = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), currentDateTime.getHours(), currentDateTime.getMinutes());\n    const endDateTimeWithoutSeconds = new Date(endDateTime.getFullYear(), endDateTime.getMonth(), endDateTime.getDate(), endDateTime.getHours(), endDateTime.getMinutes());\n\n    // Check if the currentDateTime is greater than the endDateTime without seconds\n    return currentDateTimeWithoutSeconds > endDateTimeWithoutSeconds;\n}\n\nfunction isWithinLastMinute(schedule) {\n    const startDateTime = new Date(schedule.startAt._seconds * 1000); // Convert from seconds to milliseconds\n    const currentDateTime = new Date();\n    const oneMinuteAgo = new Date(currentDateTime.getTime() - 60000); // Subtract 60,000 milliseconds (1 minute) from the current date and time\n\n    return startDateTime > oneMinuteAgo && startDateTime <= currentDateTime;\n}\n\nfunction isEnding(schedule) {\n    const endDateTime = new Date(schedule.endAt._seconds * 1000); // Convert from seconds to milliseconds\n    const currentDateTime = new Date();\n\n    // Check if the year, month, date, hour, and minute are equal\n    if (\n        endDateTime.getFullYear() === currentDateTime.getFullYear() &&\n        endDateTime.getMonth() === currentDateTime.getMonth() &&\n        endDateTime.getDate() === currentDateTime.getDate() &&\n        endDateTime.getHours() === currentDateTime.getHours() &&\n        endDateTime.getMinutes() === currentDateTime.getMinutes()\n    ) {\n        return true;\n    } else {\n        return false;\n    }\n}\n\nfunction isEndSoon(schedule) {\n    const endDateTime = new Date(schedule.endAt._seconds * 1000); // Convert from seconds to milliseconds\n    const currentDateTime = new Date();\n\n    // Calculate the end time minus 10 minutes\n    const endMinus10Minutes = new Date(endDateTime.getTime() - 10 * 60 * 1000);\n\n    // Remove the seconds from the endMinus10Minutes and currentDateTime\n    const endMinus10MinutesWithoutSeconds = new Date(endMinus10Minutes.getFullYear(), endMinus10Minutes.getMonth(), endMinus10Minutes.getDate(), endMinus10Minutes.getHours(), endMinus10Minutes.getMinutes());\n    const currentDateTimeWithoutSeconds = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), currentDateTime.getHours(), currentDateTime.getMinutes());\n\n    // Check if the date and time without seconds are equal\n    return endMinus10MinutesWithoutSeconds.getTime() === currentDateTimeWithoutSeconds.getTime();\n}\n\nfunction getIntervalMinutes(schedule) {\n    const currentDateTime = new Date();\n    currentDateTime.setSeconds(0); // Set seconds to 0\n\n    const startDateTime = new Date(schedule.startAt._seconds * 1000); // Convert from seconds to milliseconds\n    startDateTime.setSeconds(0); // Set seconds to 0\n\n    const minutesDifference = Math.floor((currentDateTime.getTime() - startDateTime.getTime()) / (1000 * 60));\n    const intervalMinutes = 30; // Interval duration in minutes\n\n    if (minutesDifference >= 0 && minutesDifference % intervalMinutes === 0) {\n        return minutesDifference;\n    }\n\n    return -1; // Return -1 if not within an interval\n}\n\nexamSchedules.forEach(schedule => {\n    if (!isScheduleExpired(schedule)) {\n        console.log(`The exam schedule \"${schedule.title}\" with ID ${schedule.id} is still active.`);\n        if (isWithinLastMinute(schedule)) {\n            console.log(`within one minutes`);\n        } else {\n            if (isEndSoon(schedule)) {\n                console.log(`ending soon`);\n            } else {\n                if (getIntervalMinutes(schedule) != -1) {\n                    console.log(`Interval:`, getIntervalMinutes(schedule));\n                } else {\n                if (isEnding(schedule)) {\n                    console.log(`ending`);\n                } else {\n                    console.log(`not ending`);\n                }\n                }\n            }\n        }\n\n    }\n});\n\n\n\n\n\n\nreturn msg;",
+        "func": "const examSchedules = global.get('examSchedules') || []\nvar textList = global.get('textList') || []\n\n// Function to check if an exam schedule is expired or not\nfunction isScheduleExpired(schedule) {\n    const currentDateTime = new Date();\n    const endDateTime = new Date(schedule.endAt._seconds * 1000); // Convert from seconds to milliseconds\n\n    // Remove the seconds from the currentDateTime and endDateTime\n    const currentDateTimeWithoutSeconds = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), currentDateTime.getHours(), currentDateTime.getMinutes());\n    const endDateTimeWithoutSeconds = new Date(endDateTime.getFullYear(), endDateTime.getMonth(), endDateTime.getDate(), endDateTime.getHours(), endDateTime.getMinutes());\n\n    // Check if the currentDateTime is greater than the endDateTime without seconds\n    return currentDateTimeWithoutSeconds > endDateTimeWithoutSeconds;\n}\n\nfunction isWithinLastMinute(schedule) {\n    const startDateTime = new Date(schedule.startAt._seconds * 1000); // Convert from seconds to milliseconds\n    const currentDateTime = new Date();\n    const oneMinuteAgo = new Date(currentDateTime.getTime() - 60000); // Subtract 60,000 milliseconds (1 minute) from the current date and time\n\n    return startDateTime > oneMinuteAgo && startDateTime <= currentDateTime;\n}\n\nfunction isEnding(schedule) {\n    const endDateTime = new Date(schedule.endAt._seconds * 1000); // Convert from seconds to milliseconds\n    const currentDateTime = new Date();\n\n    // Check if the year, month, date, hour, and minute are equal\n    if (\n        endDateTime.getFullYear() === currentDateTime.getFullYear() &&\n        endDateTime.getMonth() === currentDateTime.getMonth() &&\n        endDateTime.getDate() === currentDateTime.getDate() &&\n        endDateTime.getHours() === currentDateTime.getHours() &&\n        endDateTime.getMinutes() === currentDateTime.getMinutes()\n    ) {\n        return true;\n    } else {\n        return false;\n    }\n}\n\nfunction isEndSoon(schedule) {\n    const endDateTime = new Date(schedule.endAt._seconds * 1000); // Convert from seconds to milliseconds\n    const currentDateTime = new Date();\n\n    // Calculate the end time minus 10 minutes\n    const endMinus10Minutes = new Date(endDateTime.getTime() - 10 * 60 * 1000);\n\n    // Remove the seconds from the endMinus10Minutes and currentDateTime\n    const endMinus10MinutesWithoutSeconds = new Date(endMinus10Minutes.getFullYear(), endMinus10Minutes.getMonth(), endMinus10Minutes.getDate(), endMinus10Minutes.getHours(), endMinus10Minutes.getMinutes());\n    const currentDateTimeWithoutSeconds = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), currentDateTime.getHours(), currentDateTime.getMinutes());\n\n    // Check if the date and time without seconds are equal\n    return endMinus10MinutesWithoutSeconds.getTime() === currentDateTimeWithoutSeconds.getTime();\n}\n\nfunction getIntervalMinutes(schedule) {\n    const currentDateTime = new Date();\n    currentDateTime.setSeconds(0); // Set seconds to 0\n\n    const startDateTime = new Date(schedule.startAt._seconds * 1000); // Convert from seconds to milliseconds\n    startDateTime.setSeconds(0); // Set seconds to 0\n\n    const minutesDifference = Math.floor((currentDateTime.getTime() - startDateTime.getTime()) / (1000 * 60));\n    const intervalMinutes = 30; // Interval duration in minutes\n\n    if (minutesDifference >= 0 && minutesDifference % intervalMinutes === 0) {\n        return minutesDifference;\n    }\n\n    return -1; // Return -1 if not within an interval\n}\nfunction convertMinutesToHours(minutes) {\n    if (minutes < 60) {\n        return `${minutes} minutes`;\n    }\n\n    const hours = Math.floor(minutes / 60);\n    const remainingMinutes = minutes % 60;\n\n    if (remainingMinutes === 0) {\n        return `${hours} hours`;\n    }\n\n    return `${hours} hours ${remainingMinutes} minutes`;\n}\n\nfunction getCurrentTime() {\n    const currentDateTime = new Date();\n    let hours = currentDateTime.getHours();\n    const minutes = currentDateTime.getMinutes();\n    let meridiem = 'AM';\n\n    // Convert hours to 12-hour format and determine the meridiem\n    if (hours === 0) {\n        hours = 12;\n    } else if (hours > 12) {\n        hours -= 12;\n        meridiem = 'PM';\n    }\n\n    return `${hours} ${meridiem} ${minutes} minutes`;\n}\n\nfunction notifyClassrooms(schedule, text) {\n    let textObj = {\n        id: schedule.id,\n        text: text\n    }\n    textList = textList.filter(item => item.id != schedule.id)\n    textList.push(textObj)\n    global.set('textList', textList)\n\n    node.send({\n        classsroomList: schedule.classroomIds,\n        scheduleId: schedule.id\n    });\n}\n\nexamSchedules.forEach(schedule => {\n    if (!isScheduleExpired(schedule)) {\n        console.log(`The exam schedule \"${schedule.title}\" with ID ${schedule.id} is still active.`);\n        if (isWithinLastMinute(schedule)) {\n            console.log(`within one minutes0`);\n\n            notifyClassrooms(schedule, 'students can start writing the exam')\n        } else {\n            if (isEndSoon(schedule)) {\n                console.log(`ending soon`);\n\n                notifyClassrooms(schedule, 'Only 10 minutes left for the exam! please tie your papers')            \n            } else {\n                let intervalTime = getIntervalMinutes(schedule) \n                if (intervalTime != -1) {\n                    console.log(`Interval:`, intervalTime);\n\n                    notifyClassrooms(schedule, 'time is ' + getCurrentTime())\n                } else {\n                    if (isEnding(schedule)) {\n                        console.log(`ending`);\n\n                        notifyClassrooms(schedule, 'exam is over.Please stop writing and submit your papers')\n                    } else {\n                        //console.log(`not ending`);\n                    }\n                }\n            }\n        }\n\n    }\n});",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -374,7 +365,9 @@
         "x": 350,
         "y": 160,
         "wires": [
-            []
+            [
+                "249d3ee6f34e1be8"
+            ]
         ]
     },
     {
@@ -382,7 +375,7 @@
         "type": "function",
         "z": "fd8e8b6fa29d6f79",
         "name": "text-to-speech",
-        "func": "const { getAudioBuffer } = global.get('simpleTtsMp3');\n\nif (msg.payload.id) {\n    const textList = global.get('textList') || []\n    const textItem = textList.find(item => item.id == msg.payload.id)\n    console.log(textList, textItem)\n    const playText = textItem ? textItem.text:\"Item not found\"\n    getAudioBuffer(playText, 'en')\n        .then(buffer => {\n            // Do something with the buffer\n            msg.payload = buffer\n            node.send(msg);\n        });\n}",
+        "func": "const { getAudioBuffer } = global.get('simpleTtsMp3');\n\nif (msg.payload.id) {\n    const textList = global.get('textList') || []\n    const textItem = textList.find(item => item.id == msg.payload.id)\n    // console.log(textList, textItem)\n    const playText = textItem ? textItem.text:\"Item not found\"\n    getAudioBuffer(playText, 'en')\n        .then(buffer => {\n            // Do something with the buffer\n            msg.payload = buffer\n            node.send(msg);\n        });\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -401,11 +394,11 @@
         "type": "http in",
         "z": "fd8e8b6fa29d6f79",
         "name": "",
-        "url": "/t2mp3",
+        "url": "/examschedule",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 130,
+        "x": 110,
         "y": 420,
         "wires": [
             [
@@ -446,20 +439,72 @@
         "wires": []
     },
     {
-        "id": "201a4bafef2cc454",
+        "id": "249d3ee6f34e1be8",
         "type": "function",
         "z": "fd8e8b6fa29d6f79",
-        "name": "function 2",
-        "func": "const textList = [{\n    id: 1,\n    text: 'first item'\n}, {\n    id: 2,\n    text: '2nd item'\n},\n]\n\nglobal.set('textList', textList)\nreturn msg;",
+        "name": "Update firebase",
+        "func": "var firebaseAdmin = global.get('firebaseAdmin');\nconst configData = 'eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNhbXB1c2Nhc3QtZWxhYmlucyIsInByaXZhdGVfa2V5X2lkIjoiMWZkYzY4NTFjOGRhYWFhM2UyYjlmMzZmZDRkOTNiYWZlYzI2ZjY4YiIsInByaXZhdGVfa2V5IjoiLS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tXG5NSUlFdmdJQkFEQU5CZ2txaGtpRzl3MEJBUUVGQUFTQ0JLZ3dnZ1NrQWdFQUFvSUJBUUM5Q3g1ZTZFTktjZVB3XG5LcGcwT2Y0MVIwYXVaQ2I1aDdHU0lBdEliaEJoZmdEUlNrL2R5WERlYmw2cmRyNXQ1dmpEY2dvZW04cVA5T0YyXG5nRHBkUVZ6dUtiKzNiY093Z2N4b3F6KzQ3dXVRZGlQSXY3cFBoWU1ZNW9mUEF0YjJHV1pFV29GOWIyUDgwbUo4XG5NUzA5NWxHNjJieDNzWUtYeFBseDk5eXo2dTVwNVZIS3A1YWZhZXZMUjU0VTdnaXY0bU03UVVwWTVydG9ZZm5FXG5jV05wRTNDaU8rdmlidW9KRktYaFNDQjlRZzUxanlwRmVBTHFBeWZDS0pXcktBT2ZXZW9XOExKNlNXRCtpcTNWXG5yKzc5WHRYeU16ODNETkdqSXV3NVdWOWIzWFUvVWdxVlBkVkFyblZ4aVR6MWs5cmxPOHlwYTErMHl1U1lEM2tSXG54cXB1akRCcEFnTUJBQUVDZ2dFQUtxc3ZDblJwdGN5aGltU08wS0R6VmdLMXV5aDdYSkNLWGFWU2JxRjdISW8wXG5kSWpOb0kxMlpwb3FUNURBZUMxdElpNGtCeGNhWUNaQlduNGtUa2F4eTBiTWtVSWE3SVRMaHFkNmZVc2VDOUFDXG5rUzNuUjBvbkZqQjRZRnJ2ZW9JdW9VaDlXRHJUYW0zeEVUK0hTdVNvdDJBc2FDYStoM09MNnZPclVzZTQwdGt1XG5aVk1DMktNdXNhdU0yRERHUnlFQWN3WWl0M0EwVDFvYlVEZ1oydnEzK1c5UXZHY0NLRHBGSDlqQk1tOVFkUUo1XG5qMWlMd0QrdlhldHcxaDVtNkdkeW1BMXR6ajRLUmI5QU9oZEY2cDdKcHg5QVgrN2RzKzV1TllTRzlqWUFvalNUXG5xTjRKOFRmSnZFbHpOVEUweVhQaFhQV3hiVGgxWjlIbFc1bTZ4R0NabFFLQmdRRHRhNHZ0ZVpwaEFJNEx6akRXXG5ITkF5SXV3YjdGMFNyQVZMUnNqYjNtZ0xBdStNSHVHem9Da3FuQjB6ODRMdnlmOU1WWUF6cnJ1YStyQWhnSy9vXG5XMmk5cjRxOEtOQ0xSWndCaUNENko3NlU3dCtsc3pvTXVtM3c3dVpsanA4RmlKek5LR1JmemhPWE10WmVzVmpuXG5iUVN3NlhJaksvajdGSkszNmpRc0lLQ3l4UUtCZ1FETDFtWG9DVlFKeWR3VFlLcVBKTUJMOW5WWmhqRUMrNi84XG51MG1wMGVKSDBvZGZjYnRIOGh6cVZnZk41ZkVSWFZlOXdDcC9ocjYzRmt1dzFpM0NCMHg4ZFhOZVVFTmpZeVR3XG5Cb1pEbm9QQ05mckhkdVpqVGYxNG45YkUyVXRIeDY2T3hUZHo4anhCVFFlTVgrd0VZU1cyNE5NTU1NMURZcEwxXG50c3hVUmliUlZRS0JnUUNIUWJXOTNJRXVzZm82ajRVUzllZEdLTThLT1dYc3RVTnUxeXltMWRYQU1EUDRSNytkXG5iYWtHTlZvTnRyVHBsdEp5MG1MdkRxU2liaDdaZDA2L3VSTzZ2TDcwNHV1cjdFUXNPemxPU2tZdzRzVld5UHhSXG5OQVJlTmp2YnI1eTRzbE5pTFpqQlc4MmRYY0R5d1dZOHNjYnlZb3c3clZseThRMkU2VkEvczNiWllRS0JnUURMXG55MEE1bkZIME0yaWZ5dzdiYktBQmtwaEMrR0k2SEU4WWZGdXF1SmZtdlByeGx2RHFmb3NnVXdFY2YxL2t2NUZBXG51a2NERjBISUpUZHB4c2thNjFjeU8rOHJoVTNLcVU0OTJCZ1d0UDRBaHgyQ25VSzhXRFlxaW93Y1pTL1p4UytsXG51RkczejZFa25KSUdhOFM1b0RNbncySGVGMUN4cFhWT3l3TkE0cDVldlFLQmdIdzZwUWJXazM4S2RqUmNPNEo3XG5QYmxMMUxvcVZIOVhhRVQ3NWs1N3F4K0F5ZWYyQWlYSDh5emxxeTVCbFc2d2NpZTNSc0M1emtYc2JoZlFBWFdtXG5LbjhFQzZUcm9FenZkb0NWU2tKRk1qb3B5V2tPR0RDTTZEYnVYbWxmY1V3ZlVtSXdyVUJpTzBZNnRZam0xZGNJXG5mMkZpSWtHRi9PTVdzSHh5aFNXSmIrWmFcbi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS1cbiIsImNsaWVudF9lbWFpbCI6ImZpcmViYXNlLWFkbWluc2RrLXB3eGR2QGNhbXB1c2Nhc3QtZWxhYmlucy5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsImNsaWVudF9pZCI6IjEwMjYzMTI5MTMwMTUzMjU1NzAwMyIsImF1dGhfdXJpIjoiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL28vb2F1dGgyL2F1dGgiLCJ0b2tlbl91cmkiOiJodHRwczovL29hdXRoMi5nb29nbGVhcGlzLmNvbS90b2tlbiIsImF1dGhfcHJvdmlkZXJfeDUwOV9jZXJ0X3VybCI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92MS9jZXJ0cyIsImNsaWVudF94NTA5X2NlcnRfdXJsIjoiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vcm9ib3QvdjEvbWV0YWRhdGEveDUwOS9maXJlYmFzZS1hZG1pbnNkay1wd3hkdiU0MGNhbXB1c2Nhc3QtZWxhYmlucy5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSJ9'\n\nif (firebaseAdmin.apps.length === 0) {\n    firebaseAdmin.initializeApp({\n        credential: firebaseAdmin.credential.cert(\n            JSON.parse(Buffer.from(configData, 'base64').toString('ascii'))),\n    });\n}\n\nconst firestore = firebaseAdmin.firestore()\n\nconst doStuffs = async () => {\n    const fetchClassrooms = async (_classroomsIds) => {\n        const classroomRef = firestore.collection('devices')\n        const _classroomsItems = []\n        return classroomRef.where(firebaseAdmin.firestore.FieldPath.documentId(), 'in', _classroomsIds).get()\n            .then(snapshot => {\n                snapshot.forEach(classroomDoc => {\n                    _classroomsItems.push({ ...classroomDoc.data(), id: classroomDoc.id })\n                });\n\n                return _classroomsItems\n\n            })\n            .catch(error => {\n                console.error('Error fetching classroom documents:', error);\n                return _classroomsItems;\n            });\n    }\n\n    const classroomsIdsArray = msg.classsroomList\n\n    const classroomsArray = await fetchClassrooms(classroomsIdsArray)\n    msg.payload = { scheduleId: msg.scheduleId, recipients: classroomsArray };\n    node.send(msg);\n\n}\ndoStuffs()",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 340,
+        "x": 580,
+        "y": 160,
         "wires": [
-            []
+            [
+                "580ebb10873aa13e"
+            ]
+        ],
+        "outputLabels": [
+            "1"
         ]
+    },
+    {
+        "id": "580ebb10873aa13e",
+        "type": "function",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "Send WS Message",
+        "func": "msg.payload.recipients.map(recipient => {\n    // console.log(recipient)\n    const ws_msg = {\n        command: 'examschedule',\n        audioUrl: msg.payload.scheduleId,\n        id: msg.payload.scheduleId,\n        recipient: recipient.classroomCode\n    }\n    node.send({\n        payload: ws_msg,\n        _session: {\n            id: recipient.websocketId\n        }\n    });\n})\n// node.warn(msg.payload.recipients);\n// return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 160,
+        "wires": [
+            [
+                "98b404f08dec8afa"
+            ]
+        ]
+    },
+    {
+        "id": "98b404f08dec8afa",
+        "type": "websocket out",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "",
+        "server": "3ce080af1180e0bb",
+        "client": "",
+        "x": 990,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "efd09da01999954f",
+        "type": "debug",
+        "z": "fd8e8b6fa29d6f79",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 280,
+        "wires": []
     }
 ]
